@@ -13,8 +13,8 @@
     },
     "kafka": {
         "COIN_TOPIC": "coin_topic",
-        "IP_ADDRESS": "11.22.33.44",
-        "STOCK_TOPIC": "stock_topic"
+        "STOCK_TOPIC": "stock_topic",
+        "IP_ADDRESS": "11.22.33.44"
     },
     "rds": {
         "RDS_USER": "postgres",
