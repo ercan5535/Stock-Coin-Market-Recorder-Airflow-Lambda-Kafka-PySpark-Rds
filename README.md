@@ -10,8 +10,8 @@ Pipeline:
 <img src="https://user-images.githubusercontent.com/67562422/226958671-4435a99e-61b5-40a1-a18b-c41d7d324280.png" width="800" height="300">
 <br>
 
-# Airflow:
-. We can invokes lambda function with schedule and start our cloud components. It can be run by docker-compose up command. The <b>airflow_variables.json</b> should be uploaded Airflow variables to necessary variables.
+# Airflow
+We can invokes lambda function with schedule and start our cloud components with Airflow. It can be run by docker-compose up command. The <b>airflow_variables.json</b> should be uploaded Airflow variables to define necessary variables.
 ```bash
 ├── docker-compose.yaml
 ├── airflow_variables.json
@@ -34,11 +34,11 @@ Pipeline:
 
 There 3 dags in airflow:
 1) coin_market_record: <br>
- This dags runs every 5 minutes and invoke Lambda function to scrape coin market website for given coin list and push data to Kafka
+ This dag runs every 5 minutes and invoke Lambda function to scrape given coin market website for given coin list and push data to Kafka
 2) stock_market_record: <br>
- This dags runs every 5 minutes between 2pm and 9pm Monday through Friday(NASDAQ work time for utc) and invoke Lambda function to scrape stock market website for given stock list and push datas to Kafka
+ This dag runs every 5 minutes between 2pm and 9pm Monday through Friday(NASDAQ work time for utc) and invoke Lambda function to scrape given stock market website for given stock list and push datas to Kafka
 3) make_servers_ready: <br>
- It basically runs sql command or bash scripts(market_record/bash_scripts.py) with ssh/postgres connection and make sure every component (RDS db, Kafka server and Spark cluster) ready before starting pipeline. For the ssh connection, pem files located under the instance_pem_files folder are used.<br>
+ This dag basically runs sql command or bash scripts(market_record/bash_scripts.py) with ssh/postgres connection and make sure every component (RDS db, Kafka server and Spark cluster) ready before starting pipeline. For the ssh connection, pem files located under the instance_pem_files folder are used.<br>
  Makes servers ready steps:
     - <b>RDS</b>: Ensures coin market and stock market tables are exists on RDS db with CREATE TABLE IF NOT EXISTS sql command.
     - <b>Kafka</b>: Runs start_kafka bash script to make Kafka server is ready on ec2 instance. Bash scripts downloads docker-compose file from s3 and run it on ec2 inctance. Docker-compose file makes kafka server is working and 2 topics are created for coin and stock market data.
@@ -52,9 +52,6 @@ There 3 dags in airflow:
 
 #### ssh connection example for ec2 instance
 <img src="https://user-images.githubusercontent.com/67562422/229769201-aa899c42-dd62-4c18-b46d-95c485503cac.png" width="800" height="300">
-
-
-
 
 ### Spark Master Web UI: <br>
 <img src="https://user-images.githubusercontent.com/67562422/229760928-50f24f36-e53a-4432-b1d4-bdedf522685d.png" width="800" height="300">
