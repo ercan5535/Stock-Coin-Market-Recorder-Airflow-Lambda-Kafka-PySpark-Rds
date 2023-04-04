@@ -14,6 +14,7 @@ Pipeline:
 Air flow is only component works on local machine. We can invokes lambda function with schedule and start our cloud components. It can be run by docker-compose up command. The <b>airflow_variables.json</b> should be uploaded Airflow variables to necessary variables.
 ```bash
 ├── docker-compose.yaml
+├── airflow_variables.json
 ├── dags
 │   ├── coin_dag.py
 │   ├── make_servers_ready.py
