@@ -46,9 +46,9 @@ There 3 dags in airflow:
     - <b>Spark Workers</b>: runs start_spark_workers bash scripts to make Spark Worker nodes are ready on 3 ec2 instances. Bash script pull docker image from dockerhub and run it on ec2 instance. Docker file starts Spark Worker node and connects to Spark Master.
     - <b>Spark Submit</b>: first push spark app.py and postgres jdbc driver then run spark_submit bash command on worker node1. It starts spark app on all spark cluster.
 <img src="https://user-images.githubusercontent.com/67562422/229861412-f4b4a483-4f6d-4bb4-b977-4725059ecb65.png" width="1000" height="300">
- 
+
 ### Airflow connections
-<img src="https://user-images.githubusercontent.com/67562422/229768996-c7b87996-c636-48a3-b25d-d54a66823955.png" width="800" height="300">
+<img src="https://user-images.githubusercontent.com/67562422/229873417-b3db97cd-5ac3-4495-abdc-e3c1ed06f877.png" width="800" height="300">
 
 #### ssh connection example for ec2 instance
 <img src="https://user-images.githubusercontent.com/67562422/229769201-aa899c42-dd62-4c18-b46d-95c485503cac.png" width="800" height="300">
