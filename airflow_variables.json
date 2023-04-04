@@ -1,0 +1,29 @@
+{
+    "coin_scraping": {
+        "coin_list": ["bitcoin", "ethereum", "bnb", "dogecoin", "solana", "avalanche"],
+        "base_url": "https://coinmarketcap.com/currencies/",
+        "price_html_class": "priceValue"
+    },
+    "stock_scraping": {
+        "stock_list": ["AAPL", "TSLA", "AMZN", "GOOG", "META", "NFLX"],
+        "base_url": "https://finance.yahoo.com/quote/",
+        "stock_name_html_class": "D(ib) Fz(18px)",
+        "previouse_close_html_class": "Ta(end) Fw(600) Lh(14px)",
+        "price_html_class": "Fw(b) Fz(36px) Mb(-4px) D(ib)"
+    },
+    "kafka": {
+        "COIN_TOPIC": "coin_topic",
+        "IP_ADDRESS": "11.22.33.44",
+        "STOCK_TOPIC": "stock_topic"
+    },
+    "rds": {
+        "RDS_USER": "postgres",
+        "RDS_PW": "password",
+        "RDS_TABLE_COIN": "coin_records",
+        "RDS_TABLE_STOCK": "stock_records",
+        "RDS_URL": "jdbc:postgresql://......eu-central-1.rds.amazonaws.com/market_records_db"
+    },
+    "spark": {
+        "MASTER_INTERNAL_DNS": "ip-......eu-central-1.compute.internal"
+    }
+}

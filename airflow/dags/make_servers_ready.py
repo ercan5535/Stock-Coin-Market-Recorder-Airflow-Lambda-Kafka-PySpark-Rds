@@ -26,7 +26,7 @@ with DAG(
     dag_id='make_servers_ready',
     default_args=default_args,
     start_date=airflow.utils.dates.days_ago(1),
-    schedule_interval='@daily'
+    schedule_interval='@once'
 ) as dag:
     # Define start dummy DAG
     start_operator = DummyOperator(task_id='begin-execution')

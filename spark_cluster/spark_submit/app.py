@@ -102,12 +102,12 @@ df_stock = df_stock.withColumn("array_value",from_json(col("value"),array_schema
 # +--------------------+--------------------+
 # |               value|           timestamp|
 # +--------------------+--------------------+
-# |{"stock_name":"Ap...|2023-03-06 21:38:...|
-# |{"stock_name":"Te...|2023-03-06 21:38:...|
-# |{"stock_name":"Am...|2023-03-06 21:38:...|
-# |{"stock_name":"Al...|2023-03-06 21:38:...|
-# |{"stock_name":"Me...|2023-03-06 21:38:...|
-# |{"stock_name":"Ne...|2023-03-06 21:38:...|
+# |{"stock_name":"Ap...|2023-03-06 18:50:...|
+# |{"stock_name":"Te...|2023-03-06 18:50:...|
+# |{"stock_name":"Am...|2023-03-06 18:50:...|
+# |{"stock_name":"Al...|2023-03-06 18:50:...|
+# |{"stock_name":"Me...|2023-03-06 18:50:...|
+# |{"stock_name":"Ne...|2023-03-06 18:50:...|
 
 # Parse values
 df_coin = df_coin.select(from_json(col("value").cast("string"), coin_schema).alias("parsed_value"), "timestamp")
@@ -137,13 +137,12 @@ df_stock = df_stock.withColumnRenamed("stock_name", "stock") \
 # +--------------------+------+--------------+--------------------+
 # |               stock| price|previous_close|                date|
 # +--------------------+------+--------------+--------------------+
-# |   Apple Inc. (AAPL)|154.82|        151.03|2023-03-06 21:56:...|
-# |  Tesla, Inc. (TSLA)|193.75|        197.79|2023-03-06 21:56:...|
-# |Amazon.com, Inc. ...|  94.8|          94.9|2023-03-06 21:56:...|
-# |Alphabet Inc. (GOOG)| 95.81|         94.02|2023-03-06 21:56:...|
-# |Meta Platforms, I...|186.07|        185.25|2023-03-06 21:56:...|
-# |Netflix, Inc. (NFLX)|316.96|        315.18|2023-03-06 21:56:...|
-
+# |   Apple Inc. (AAPL)|154.82|        151.03|2023-03-06 18:50:...|
+# |  Tesla, Inc. (TSLA)|193.75|        197.79|2023-03-06 18:50:...|
+# |Amazon.com, Inc. ...|  94.8|          94.9|2023-03-06 18:50:...|
+# |Alphabet Inc. (GOOG)| 95.81|         94.02|2023-03-06 18:50:...|
+# |Meta Platforms, I...|186.07|        185.25|2023-03-06 18:50:...|
+# |Netflix, Inc. (NFLX)|316.96|        315.18|2023-03-06 18:50:...|
 
 # Write datas into RDS tables
 # Define the function to write to RDS

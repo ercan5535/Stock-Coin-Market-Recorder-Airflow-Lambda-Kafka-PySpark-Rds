@@ -9,12 +9,13 @@ from airflow.models import Variable
 
 # Get Kafka credentials from Airflow variables
 kafka = Variable.get("kafka", deserialize_json=True)
+scrape_params = Variable.get("coin_scraping", deserialize_json=True)
 
 # Define Lambda function input parameters
 lambda_params={
-    "coin_list":["bitcoin", "ethereum", "bnb", "dogecoin", "solana", "avalanche"],
-    "base_url": "https://coinmarketcap.com/currencies/",
-    "price_html_class": "priceValue",
+    "coin_list": scrape_params["coin_list"],
+    "base_url": scrape_params["base_url"],
+    "price_html_class": scrape_params["price_html_class"],
     "kafka_server": kafka["IP_ADDRESS"],
     "kafka_topic": kafka["COIN_TOPIC"]
 }
