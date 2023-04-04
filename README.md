@@ -1,7 +1,7 @@
 # Description
 
 In this project I created a data pipeline usign AWS technologies Lambda, EC2, RDS with Kafka, Spark and Airflow. <br>
-It was a good practice for working with cloud technologies. <br>
+It was a good practice for working with cloud technologies. Spark, Lambda and Kafka folders are just for representation for cloud parts. All necessary files are defined under Airflow folder. <br>
 
 Pipeline:
 - Web scraping with Lambda functions is data source for pipeline. 2 Lambda functions are invoked by Airflow every 5 minutes. Lambda functions get data from websites(coinmarketcap, yahoofinance) and send it to Kafka topics
@@ -11,7 +11,7 @@ Pipeline:
 <br>
 
 # Airflow:
-Air flow is only component works on local machine. We can invokes lambda function with schedule and start our cloud components. It can be run by docker-compose up command. 
+Air flow is only component works on local machine. We can invokes lambda function with schedule and start our cloud components. It can be run by docker-compose up command. The <b>airflow_variables.json</b> should be uploaded Airflow variables to necessary variables.
 ```bash
 ├── docker-compose.yaml
 ├── dags
