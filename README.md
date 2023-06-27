@@ -1,7 +1,7 @@
 # Description
 
-In this project I created a data pipeline using AWS technologies Lambda, EC2, RDS with Kafka, Spark and Airflow.(Kafka and Spark nodes working on EC2) <br>
-It was a good practice for working with cloud technologies. spark_cluster, lambda_function and kafka folders are for representation cloud parts, only Airflow works on local machine.
+In this project I created a data pipeline using AWS technologies Lambda, EC2, RDS with Kafka, Spark and Airflow. <br>
+spark_cluster, lambda_function and kafka folders are for representation cloud parts, only Airflow works on local machine.
 
 Pipeline:
 - Web scraping with Lambda functions is data source for pipeline. 2 Lambda functions are invoked by Airflow every 5 minutes. Lambda functions get data from websites(coinmarketcap, yahoofinance) and send it to Kafka topics
