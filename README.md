@@ -1,6 +1,6 @@
 # Description
 
-In this project I created a data pipeline usign AWS technologies Lambda, EC2, RDS with Kafka, Spark and Airflow. <br>
+In this project I created a data pipeline using AWS technologies Lambda, EC2, RDS with Kafka, Spark and Airflow. <br>
 It was a good practice for working with cloud technologies. spark_cluster, lambda_function and kafka folders are for representation cloud parts, only Airflow works on local machine.
 
 Pipeline:
